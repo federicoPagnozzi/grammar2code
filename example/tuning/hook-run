@@ -1,0 +1,24 @@
+#!/bin/bash
+
+EXE="python ../test.py"
+GRAMMAR="sat.xml"
+DEPTH=1
+MAX_STEPS=100
+SEED=0
+FIXED_PARAMS="sat.xml 1 30 0"
+INSTANCE=$1
+CANDIDATE=$2
+shift 2 || exit 1
+CAND_PARAMS=$*
+
+STDOUT=c${CANDIDATE}.stdout
+STDERR=c${CANDIDATE}.stderr
+
+$EXE ${GRAMMAR} ${INSTANCE} ${DEPTH} ${MAX_STEPS} ${SEED} ${CAND_PARAMS} 1> ${STDOUT} 2> ${STDERR}
+
+COST=$(tail $STDOUT | grep Result | cut -d ':' -f 2)
+
+echo $COST
+rm -f "${STDOUT}"
+rm -f "${STDERR}"
+exit 0

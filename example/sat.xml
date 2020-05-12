@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<gr:grammar xmlns:gr="grammar">
+
+    <gr:include source="sls_algorithm.xml"/>
+
+    <gr:derivations xmlns:ps="problem specific" xmlns:sa="sls algorithm">
+
+        <ps:start output="specific.h">
+            <![CDATA[
+                #include "sat.h"
+                /* some problem specific definitions */
+            ]]>
+        </ps:start>
+
+        <ps:step>
+            <ps:step1/><or/><ps:step2/>
+        </ps:step>
+
+        <ps:step1>
+            <![CDATA[            /* search in neighbourhood1 */
+                        f_eval = (float)rand() / (float)RAND_MAX;]]>
+        </ps:step1>
+
+        <ps:step2>
+            <![CDATA[            /* search in neighbourhood2 */
+                        f_eval = 100 + (float)rand() / (float)RAND_MAX;]]>
+        </ps:step2>
+
+        <gr:copy source="sat_sources/sat.h" destination="sat.h" />
+    </gr:derivations>
+
+</gr:grammar>

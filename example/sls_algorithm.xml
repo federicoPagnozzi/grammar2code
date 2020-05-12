@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<gr:grammar xmlns:gr="grammar">
+
+    <gr:derivations xmlns:sa="sls algorithm" xmlns:ps="problem specific">
+
+        <sa:start output="general.h">
+            <![CDATA[
+                float sls_algorithm(int max_steps) {
+                    int step = 0;
+                    float f_eval, best = FLT_MAX;
+            ]]>
+            <sa:simulated_annealing/>
+            <![CDATA[
+                    return best;
+                }
+            ]]>
+        </sa:start>
+
+        <sa:simulated_annealing>
+            <![CDATA[
+                    while(step++ < max_steps /* or other termination condition */) {
+            ]]>
+            <ps:step/>
+            <sa:save_best/>
+            <![CDATA[
+                        /* Metropolis acceptance criterion goes here */
+                    }
+            ]]>
+        </sa:simulated_annealing>
+
+        <sa:save_best>
+            <![CDATA[
+                        if (f_eval < best) {
+                            best = f_eval;
+                        }
+            ]]>
+        </sa:save_best>
+
+    </gr:derivations>
+
+</gr:grammar>
