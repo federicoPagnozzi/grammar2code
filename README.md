@@ -57,7 +57,6 @@ The latest version (```0.2-internal```) can be downloaded here:
 | OS X 10.9 (Mavericks)                   | [grammar2code_osx.zip](files/grammar2code_osx.zip)             |
 | *Unix systems (not tested on Windows).* | [grammar2code_sources.zip](files/grammar2code_sources.zip)     |
 
-*TODO: upload the software somewhere to be linkable in the journal paper / technical report*
 
 Introduction
 -------------
