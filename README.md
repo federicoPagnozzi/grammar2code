@@ -53,9 +53,8 @@ The latest version (```0.2-internal```) can be downloaded here:
 
 | operating system                        | download                                                       |
 | --------------------------------------- | -------------------------------------------------------------- |
-| GNU/Linux x86_64                        | [grammar2code_linux.tar.bz2](files/grammar2code_linux.tar.bz2) |
-| OS X 10.9 (Mavericks)                   | [grammar2code_osx.zip](files/grammar2code_osx.zip)             |
-| *Unix systems (not tested on Windows).* | [grammar2code_sources.zip](files/grammar2code_sources.zip)     |
+| OS X 10.9 (Mavericks)                   | [grammar2code_osx.zip](distribution/grammar2code_osx.zip)             |
+| *Unix systems (not tested on Windows).* | [grammar2code_sources.zip](distribution/grammar2code_sources.zip)     |
 
 
 Introduction
