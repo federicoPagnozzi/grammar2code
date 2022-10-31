@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.9)
 
 project(grammar2code)
 
@@ -47,8 +47,8 @@ endif()
 find_package(Boost 1.53 COMPONENTS program_options system filesystem regex REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
 link_directories(${Boost_LIBRARY_DIRS})
-set(LIBS ${LIBS} ${Boost_LIBRARY_DIRS})
-message(WARNING, ${Boost_LIBRARY_DIRS} )
+set(LIBS ${LIBS} ${Boost_LIBRARIES})
+message(WARNING, ${LIBS} )
 # forcing the linker search path, link_directories is ignore, or the libs
 # paths are stripped because they are in the LIBRARY PATH, forcing the
 # search path works in these cases and when there are severak versions of
@@ -64,7 +64,7 @@ include_directories(3d_party/pugixml/src/)
 add_library (grammar STATIC
              src/model.cpp src/walker.cpp src/configuration.cpp
              src/irace_conf.cpp src/paramils_conf.cpp src/smac_conf.cpp
-             src/error.cpp src/error.hpp src/params2code.cpp src/grammar.hpp)
+             src/error.cpp src/error.hpp src/params2code.cpp src/grammar.hpp src/emili_conf.cpp)
 set(LIBS grammar ${LIBS})
 
 add_executable(grammar2code
