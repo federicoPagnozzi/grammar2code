@@ -64,7 +64,7 @@ include_directories(3d_party/pugixml/src/)
 add_library (grammar STATIC
              src/model.cpp src/walker.cpp src/configuration.cpp
              src/irace_conf.cpp src/paramils_conf.cpp src/smac_conf.cpp
-             src/error.cpp src/error.hpp src/params2code.cpp src/grammar.hpp src/emili_conf.cpp)
+             src/error.cpp src/error.hpp src/params2code.cpp src/grammar.hpp src/emili_conf.cpp src/crace_conf.cpp)
 set(LIBS grammar ${LIBS})
 
 add_executable(grammar2code

@@ -96,7 +96,7 @@ void define_options(boost::program_options::options_description& desc_full,
     boost::program_options::options_description desc_pars("Options for generating the parameters");
     desc_pars.add_options()
         ("depth,d", boost::program_options::value<int>()->default_value(3), "maximum recursion depth")
-        ("params_format,f", boost::program_options::value<std::string>()->default_value("irace"), "format: 'irace', 'ParamILS', 'SMAC' or 'emili' ")
+        ("params_format,f", boost::program_options::value<std::string>()->default_value("irace"), "format: 'irace', 'ParamILS', 'SMAC', 'crace' or 'emili' ")
         ("parameters,p", boost::program_options::value<std::string>(), "save generated parameters to file")
     ;
 
@@ -223,6 +223,8 @@ int main(int argc, const char * argv[])
             configuration = std::make_shared<grammar::smac_conf>(ruleset, depth);
         } else if (format == "emili") {
             configuration = std::make_shared<grammar::emili_conf>(ruleset, depth);
+        }else if (format == "crace") {
+            configuration = std::make_shared<grammar::crace_conf>(ruleset, depth);
         } else {
             Error::fatal("Unrecognized file format " + vm["params_format"].as<std::string>() + ".");
         }
